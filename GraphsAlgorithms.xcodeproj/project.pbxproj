@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CC0384F11BEFA98A007DC2DB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC0384F01BEFA98A007DC2DB /* main.cpp */; };
-		CC0384FE1BEFAA29007DC2DB /* WidthFastSearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC0384FC1BEFAA29007DC2DB /* WidthFastSearch.cpp */; settings = {ASSET_TAGS = (); }; };
-		CC0385021BEFAA64007DC2DB /* BroadFastSearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC0385001BEFAA64007DC2DB /* BroadFastSearch.cpp */; settings = {ASSET_TAGS = (); }; };
-		CC0385051BEFAAA6007DC2DB /* Dijkstra.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC0385031BEFAAA6007DC2DB /* Dijkstra.cpp */; settings = {ASSET_TAGS = (); }; };
 		CC0385081BEFAF26007DC2DB /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC0385061BEFAF26007DC2DB /* Graph.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -29,15 +26,13 @@
 /* Begin PBXFileReference section */
 		CC0384ED1BEFA98A007DC2DB /* GraphsAlgorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GraphsAlgorithms; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC0384F01BEFA98A007DC2DB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		CC0384FC1BEFAA29007DC2DB /* WidthFastSearch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WidthFastSearch.cpp; path = GraphsAlgorithms/WidthFastSearch.cpp; sourceTree = "<group>"; };
-		CC0384FD1BEFAA29007DC2DB /* WidthFastSearch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = WidthFastSearch.hpp; path = GraphsAlgorithms/WidthFastSearch.hpp; sourceTree = "<group>"; };
-		CC0385001BEFAA64007DC2DB /* BroadFastSearch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BroadFastSearch.cpp; path = GraphsAlgorithms/BroadFastSearch.cpp; sourceTree = "<group>"; };
-		CC0385011BEFAA64007DC2DB /* BroadFastSearch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BroadFastSearch.hpp; path = GraphsAlgorithms/BroadFastSearch.hpp; sourceTree = "<group>"; };
-		CC0385031BEFAAA6007DC2DB /* Dijkstra.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Dijkstra.cpp; path = GraphsAlgorithms/Dijkstra.cpp; sourceTree = "<group>"; };
-		CC0385041BEFAAA6007DC2DB /* Dijkstra.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Dijkstra.hpp; path = GraphsAlgorithms/Dijkstra.hpp; sourceTree = "<group>"; };
 		CC0385061BEFAF26007DC2DB /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
 		CC0385071BEFAF26007DC2DB /* Graph.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Graph.hpp; sourceTree = "<group>"; };
-		CCF84DEE1C0665B30054D30A /* Search.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Search.h; path = GraphsAlgorithms/Search.h; sourceTree = "<group>"; };
+		CCF00A5C1C07AE8600AFD19A /* Dijkstra.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dijkstra.cpp; sourceTree = "<group>"; };
+		CCF00A5D1C07AE8600AFD19A /* Dijkstra.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Dijkstra.hpp; sourceTree = "<group>"; };
+		CCF00A5E1C07AE8600AFD19A /* Search.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
+		CCF00A5F1C07AE8600AFD19A /* WidthFastSearch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WidthFastSearch.cpp; sourceTree = "<group>"; };
+		CCF00A601C07AE8600AFD19A /* WidthFastSearch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = WidthFastSearch.hpp; sourceTree = "<group>"; };
 		CCF84DEF1C0666040054D30A /* Definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +66,7 @@
 		CC0384EF1BEFA98A007DC2DB /* GraphsAlgorithms */ = {
 			isa = PBXGroup;
 			children = (
-				CC0384FF1BEFAA31007DC2DB /* Searches */,
+				CCF00A5B1C07AE8600AFD19A /* Searches */,
 				CC0384F01BEFA98A007DC2DB /* main.cpp */,
 				CCF84DEF1C0666040054D30A /* Definitions.h */,
 				CC0385071BEFAF26007DC2DB /* Graph.hpp */,
@@ -80,19 +75,16 @@
 			path = GraphsAlgorithms;
 			sourceTree = "<group>";
 		};
-		CC0384FF1BEFAA31007DC2DB /* Searches */ = {
+		CCF00A5B1C07AE8600AFD19A /* Searches */ = {
 			isa = PBXGroup;
 			children = (
-				CCF84DEE1C0665B30054D30A /* Search.h */,
-				CC0384FD1BEFAA29007DC2DB /* WidthFastSearch.hpp */,
-				CC0384FC1BEFAA29007DC2DB /* WidthFastSearch.cpp */,
-				CC0385011BEFAA64007DC2DB /* BroadFastSearch.hpp */,
-				CC0385001BEFAA64007DC2DB /* BroadFastSearch.cpp */,
-				CC0385041BEFAAA6007DC2DB /* Dijkstra.hpp */,
-				CC0385031BEFAAA6007DC2DB /* Dijkstra.cpp */,
+				CCF00A5E1C07AE8600AFD19A /* Search.h */,
+				CCF00A5C1C07AE8600AFD19A /* Dijkstra.cpp */,
+				CCF00A5D1C07AE8600AFD19A /* Dijkstra.hpp */,
+				CCF00A5F1C07AE8600AFD19A /* WidthFastSearch.cpp */,
+				CCF00A601C07AE8600AFD19A /* WidthFastSearch.hpp */,
 			);
-			name = Searches;
-			path = ..;
+			path = Searches;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +143,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC0385021BEFAA64007DC2DB /* BroadFastSearch.cpp in Sources */,
-				CC0385051BEFAAA6007DC2DB /* Dijkstra.cpp in Sources */,
-				CC0384FE1BEFAA29007DC2DB /* WidthFastSearch.cpp in Sources */,
 				CC0384F11BEFA98A007DC2DB /* main.cpp in Sources */,
 				CC0385081BEFAF26007DC2DB /* Graph.cpp in Sources */,
 			);

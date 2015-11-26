@@ -13,8 +13,9 @@ typedef int vertex;
 
 struct EdgeTo
 {
-    int finish, weight;
-    EdgeTo(int _finish, int _weight)
+    int finish;
+    long long weight;
+    EdgeTo(int _finish, long long _weight)
     {
         finish = _finish;
         weight = _weight;
@@ -23,8 +24,9 @@ struct EdgeTo
 
 struct Edge
 {
-    int start, finish, weight;
-    Edge(int _start, int _finish, int _weight)
+    int start, finish;
+    long long weight;
+    Edge(int _start, int _finish, long long _weight)
     {
         start = _start;
         finish = _finish;
