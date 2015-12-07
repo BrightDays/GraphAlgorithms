@@ -18,14 +18,14 @@ using namespace std;
 class Search
 {
 public:
-    virtual void search();
-    virtual long long distanceTo(vertex);
-    virtual vector<vertex> wayToVertex(vertex);
-    virtual vector<long long> allDistances();
-    virtual void setGraph(const Graph&);
-    virtual void setStart(vertex);
-    virtual void setFinish(vertex);
-    virtual void setNewData(int, int, const Graph&);
+    virtual void search() = 0;
+    virtual long long distanceTo(vertex) = 0;
+    virtual vector<vertex> wayToVertex(vertex) = 0;
+    virtual vector<long long> allDistances() = 0;
+    virtual void setGraph(const Graph&) = 0;
+    virtual void setStart(vertex) = 0;
+    virtual void setFinish(vertex) = 0;
+    virtual void setNewData(int, int, const Graph&) = 0;
 };
 
 #endif /* Search_h */

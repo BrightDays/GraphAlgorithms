@@ -9,6 +9,8 @@
 #ifndef Definitions_h
 #define Definitions_h
 
+#define MAX_DISTANCE 1e18
+
 typedef int vertex;
 
 struct EdgeTo

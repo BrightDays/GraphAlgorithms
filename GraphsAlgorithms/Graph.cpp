@@ -20,15 +20,23 @@ Graph :: Graph(int _n)
     iterators.resize(n, 0);
 }
 
-Graph :: Graph(int _n, const vector<Edge> &edges)
+Graph :: Graph(int _n, const vector<Edge> &_edges)
 {
     n = _n;
-    m = (int)edges.size();
+    m = (int)_edges.size();
+    edges = _edges;
+    matrix.resize(n);
+    iterators.resize(n, 0);
     for(int i = 0; i < edges.size(); i++)
     {
-        Edge edge = edges[i];
+        Edge edge = _edges[i];
         matrix[edge.start].push_back(EdgeTo(edge.finish, edge.weight));
     }
+}
+
+vector<Edge> Graph :: allEdges()
+{
+    return edges;
 }
 
 void Graph :: addEdge(const Edge& edge)
@@ -54,6 +62,7 @@ Edge Graph :: nextEdgeForVertex(vertex v)
 {
     EdgeTo edgeTo = matrix[v][iterators[v]];
     Edge edge = Edge(v, edgeTo);
+    iterators[v]++;
     return edge;
 }
 

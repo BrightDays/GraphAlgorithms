@@ -8,13 +8,13 @@
 
 #include "WidthFastSearch.hpp"
 
-#define MAX_DISTANCE 1e18
 
 WidthFastSearch :: WidthFastSearch(int _start, int _finish, const Graph& g)
 {
     start = _start;
     finish = _finish;
     graph = g;
+    ancestors.resize(graph.numberOfVertexes());
     for(int i = 0; i < graph.numberOfVertexes(); i++)
     {
         distance.push_back(MAX_DISTANCE);

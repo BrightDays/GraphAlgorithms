@@ -20,13 +20,15 @@ class Graph
 private:
     int n;
     int m;
-    vector<vertex, vector<EdgeTo> > matrix;
+    vector<vector<EdgeTo>> matrix;
     vector<int> iterators;
+    vector<Edge> edges;
     
 public:
     Graph(int, const vector<Edge>&);
     Graph(int);
     
+    vector<Edge> allEdges();
     bool hasNextEdgeForVertex(vertex);
     vector<EdgeTo> edgesForVertex(vertex);
     Edge nextEdgeForVertex(vertex);

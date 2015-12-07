@@ -8,7 +8,7 @@
 
 #include "Dijkstra.hpp"
 
-#define MAX_DISTANCE 1e18
+
 
 Dijkstra :: Dijkstra(int _start, int _finish, const Graph& g)
 {
