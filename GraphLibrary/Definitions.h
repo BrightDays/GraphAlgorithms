@@ -12,16 +12,6 @@ namespace GraphLibrary
 
     typedef int vertex;
 
-    struct EdgeTo
-    {
-        int finish;
-        long long weight;
-        EdgeTo(int _finish, long long _weight)
-        {
-            finish = _finish;
-            weight = _weight;
-        }
-    };
 
     struct Edge
     {
@@ -40,12 +30,7 @@ namespace GraphLibrary
             finish = _finish;
             weight = 1;
         }
-        Edge(int _start, EdgeTo edgeTo)
-        {
-            start = _start;
-            finish = edgeTo.finish;
-            weight = edgeTo.weight;
-        }
+
     };
 
 

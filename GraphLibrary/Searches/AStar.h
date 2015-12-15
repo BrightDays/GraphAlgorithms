@@ -53,12 +53,9 @@ namespace GraphLibrary
     template<class G> void AStar<G>::search()
     {
 
-
-
         CREATE_METHOD_CALLER(vector<Edge>::iterator, beginForVertex, graph);
         CREATE_METHOD_CALLER(vector<Edge>::iterator, endForVertex, graph);
         CREATE_METHOD_CALLER(vector<Edge>, edgesForVertex, graph);
-
 
         set < pair<long long, int> > q;
         q.insert (make_pair(distanceFunction(start, finish), start));

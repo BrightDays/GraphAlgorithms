@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "MatrixGraph.h"
-#include "GraphLibrary/Definitions.h"
-#include "GraphLibrary/Searches/AStar.h"
+#include "GraphLibrary/GraphLibrary.h"
 
 using namespace std;
 
@@ -22,7 +21,16 @@ int main()
     blocked.push_back(make_pair(3, 3));
 
     MatrixGraph g(5, 7, blocked);
-    GraphLibrary::AStar<MatrixGraph> aStar(0, 5*7 - 1, distanceFunction, g);
+    GraphLibrary::AStar<MatrixGraph> aStar(0, 34, distanceFunction, g);
     aStar.search();
-    cout << aStar.distanceTo(5*7-1);
+    cout << aStar.distanceTo(5*7-1) << endl;
+
+    GraphLibrary::WidthFastSearch<MatrixGraph> wfs(0, 34, g);
+    wfs.search();
+    cout << wfs.distanceTo(5*7-1) << endl;
+
+    GraphLibrary::Dijkstra<MatrixGraph> d(0, 34, g);
+    d.search();
+    cout << d.distanceTo(5*7-1) << endl;
+
 }

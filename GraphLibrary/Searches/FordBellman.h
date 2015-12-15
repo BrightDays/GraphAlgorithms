@@ -16,6 +16,10 @@ namespace GraphLibrary
     template <class G>
     class FordBellman
     {
+        CREATE_CHECK_METHOD_NO_PARAMS(begin, G);
+        CREATE_CHECK_METHOD_NO_PARAMS(end, G);
+        CREATE_CHECK_METHOD_NO_PARAMS(allEdges, G);
+
     private:
         vertex start, finish;
         vector<long long> distance;
@@ -51,6 +55,10 @@ namespace GraphLibrary
     template <class G>
     void FordBellman<G> :: search()
     {
+        CREATE_METHOD_CALLER(vector<Edge>::iterator, begin, graph);
+        CREATE_METHOD_CALLER(vector<Edge>::iterator, end, graph);
+        CREATE_METHOD_CALLER(vector<Edge>, allEdges, graph);
+
         distance[start] = 0;
         while (true)
         {
@@ -60,11 +68,11 @@ namespace GraphLibrary
             vector<Edge> currentEdges;
             if (graph->iteratorBased())
             {
-                itBegin = graph->begin();
-                itEnd = graph->end();
+                itBegin = callMethod_begin();
+                itEnd = callMethod_end();
             } else
             {
-                currentEdges = graph->allEdges();
+                currentEdges = callMethod_allEdges();
                 itBegin = currentEdges.begin();
                 itEnd = currentEdges.end();
             }

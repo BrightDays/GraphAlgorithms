@@ -18,6 +18,10 @@ namespace GraphLibrary
     template <class G>
     class WidthFastSearch
     {
+        CREATE_CHECK_METHOD_PARAMS(beginForVertex, G);
+        CREATE_CHECK_METHOD_PARAMS(endForVertex, G);
+        CREATE_CHECK_METHOD_PARAMS(edgesForVertex, G);
+
     private:
         vertex start, finish;
         vector<long long> distance;
@@ -39,7 +43,7 @@ namespace GraphLibrary
     };
 
     template <class G>
-    WidthFastSearch<G> :: WidthFastSearch(int _start, int _finish, const G &g)
+    WidthFastSearch<G> :: WidthFastSearch(vertex _start, vertex _finish, const G &g)
     {
         start = _start;
         finish = _finish;
@@ -55,6 +59,10 @@ namespace GraphLibrary
     template <class G>
     void WidthFastSearch<G> :: search()
     {
+        CREATE_METHOD_CALLER(vector<Edge>::iterator, beginForVertex, graph);
+        CREATE_METHOD_CALLER(vector<Edge>::iterator, endForVertex, graph);
+        CREATE_METHOD_CALLER(vector<Edge>, edgesForVertex, graph);
+
         q.push(start);
         distance[start] = 0;
         ancestors[start] = -1;
@@ -67,15 +75,14 @@ namespace GraphLibrary
             vector<Edge> currentEdges;
             if (graph->iteratorBased())
             {
-                itBegin = graph->beginForVertex(v);
-                itEnd = graph->endForVertex(v);
+                itBegin = callMethod_beginForVertex(v);
+                itEnd = callMethod_endForVertex(v);
             } else
             {
-                currentEdges = graph->edgesForVertex(v);
+                currentEdges = callMethod_edgesForVertex(v);
                 itBegin = currentEdges.begin();
                 itEnd = currentEdges.end();
             }
-
             for(vector<Edge> :: iterator it = itBegin; it!=itEnd; it++)
             {
                 Edge edge = *it;

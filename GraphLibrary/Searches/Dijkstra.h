@@ -13,9 +13,15 @@ using namespace std;
 
 namespace GraphLibrary
 {
+
+
     template <class G>
     class Dijkstra
     {
+        CREATE_CHECK_METHOD_PARAMS(beginForVertex, G);
+        CREATE_CHECK_METHOD_PARAMS(endForVertex, G);
+        CREATE_CHECK_METHOD_PARAMS(edgesForVertex, G);
+
     private:
         vertex start, finish;
         vector<vertex> ancestors;
@@ -51,6 +57,11 @@ namespace GraphLibrary
     template <class G>
     void Dijkstra<G> :: search()
     {
+
+        CREATE_METHOD_CALLER(vector<Edge>::iterator, beginForVertex, graph);
+        CREATE_METHOD_CALLER(vector<Edge>::iterator, endForVertex, graph);
+        CREATE_METHOD_CALLER(vector<Edge>, edgesForVertex, graph);
+
         set < pair<long long,int> > q;
         distance[start] = 0;
         q.insert (make_pair (0, start));
@@ -63,11 +74,11 @@ namespace GraphLibrary
             vector<Edge> currentEdges;
             if (graph->iteratorBased())
             {
-                itBegin = graph->beginForVertex(v);
-                itEnd = graph->endForVertex(v);
+                itBegin = callMethod_beginForVertex(v);
+                itEnd = callMethod_endForVertex(v);
             } else
             {
-                currentEdges = graph->edgesForVertex(v);
+                currentEdges = callMethod_edgesForVertex(v);
                 itBegin = currentEdges.begin();
                 itEnd = currentEdges.end();
             }
