@@ -1,20 +1,45 @@
 //
-//  Dijkstra.cpp
-//  GraphsAlgorithms
-//
-//  Created by Eugene Marchukevich on 11/8/15.
-//  Copyright © 2015 Eugene Marchukevich. All rights reserved.
+// Created by Eugene Marchukevich on 12/16/15.
 //
 
-#include "Dijkstra.hpp"
+#ifndef GRAPHALGORITHMS_DIJKSTRA_H
+#define GRAPHALGORITHMS_DIJKSTRA_H
+
+#include <vector>
+#include <set>
+#include "../Definitions.h"
+
+using namespace std;
 
 namespace GraphLibrary
 {
-    Dijkstra :: Dijkstra(vertex _start, vertex _finish, const BaseGraph &g)
+    template <class G>
+    class Dijkstra
+    {
+    private:
+        vertex start, finish;
+        vector<vertex> ancestors;
+        G *graph;
+        vector<long long> distance;
+
+    public:
+        Dijkstra(vertex, vertex, const G & g);
+
+        void search();
+        long long distanceTo(vertex);
+        vector<vertex> wayToVertex(vertex);
+        vector<long long> allDistances();
+        void setGraph(const G&);
+        void setStart(vertex);
+        void setFinish(vertex);
+        void setNewData(int, int, const G&);
+    };
+    template <class G>
+    Dijkstra<G> :: Dijkstra(vertex _start, vertex _finish, const G &g)
     {
         start = _start;
         finish = _finish;
-        graph = (BaseGraph*)&g;
+        graph = (G*)&g;
         ancestors.resize(graph->numberOfVertexes());
         for(int i = 0; i < graph->numberOfVertexes(); i++)
         {
@@ -23,7 +48,8 @@ namespace GraphLibrary
     }
 
 
-    void Dijkstra :: search()
+    template <class G>
+    void Dijkstra<G> :: search()
     {
         set < pair<long long,int> > q;
         distance[start] = 0;
@@ -45,7 +71,7 @@ namespace GraphLibrary
                 itBegin = currentEdges.begin();
                 itEnd = currentEdges.end();
             }
-            
+
             for(vector<Edge> :: iterator it = itBegin; it!=itEnd; it++)
             {
                 Edge edge = *it;
@@ -62,42 +88,46 @@ namespace GraphLibrary
         }
     }
 
-
-    long long Dijkstra :: distanceTo(vertex v)
+    template <class G>
+    long long Dijkstra<G> :: distanceTo(vertex v)
     {
         if (distance[v] == MAX_DISTANCE)
             return -1;
         return distance[v];
     }
 
-    vector<vertex> Dijkstra :: wayToVertex(vertex v)
+    template <class G>
+    vector<vertex> Dijkstra<G> :: wayToVertex(vertex v)
     {
         vector<vertex> way;
         if (distance[v] == MAX_DISTANCE)
             return way;
-        
+
         for (vertex v = finish; v != -1; v = ancestors[v])
             way.push_back(v);
         reverse(way.begin(), way.end());
         return way;
     }
 
-    vector<long long> Dijkstra :: allDistances()
+    template <class G>
+    vector<long long> Dijkstra<G> :: allDistances()
     {
         return distance;
     }
 
 
-    void Dijkstra :: setNewData(int _start, int _finish, const BaseGraph &g)
+    template <class G>
+    void Dijkstra<G> :: setNewData(int _start, int _finish, const G &g)
     {
         start = _start;
         finish = _finish;
-        graph = (BaseGraph*)&g;
+        graph = (G*)&g;
     }
 
-    void Dijkstra :: setGraph(const BaseGraph &g)
+    template <class G>
+    void Dijkstra<G> :: setGraph(const G &g)
     {
-        graph = (BaseGraph*)&g;
+        graph = (G*)&g;
         distance.resize(graph->numberOfVertexes());
         for(int i = 0; i < graph->numberOfVertexes(); i++)
         {
@@ -105,13 +135,20 @@ namespace GraphLibrary
         }
     }
 
-    void Dijkstra :: setStart(vertex s)
+    template <class G>
+    void Dijkstra<G> :: setStart(vertex s)
     {
         start = s;
     }
 
-    void Dijkstra :: setFinish(vertex f)
+    template <class G>
+    void Dijkstra<G> :: setFinish(vertex f)
     {
         finish = f;
     }
 }
+
+
+
+
+#endif //GRAPHALGORITHMS_DIJKSTRA_H

@@ -1,15 +1,9 @@
 //
-//  Graph.cpp
-//  GraphsAlgorithms
-//
-//  Created by Eugene Marchukevich on 11/8/15.
-//  Copyright © 2015 Eugene Marchukevich. All rights reserved.
+// Created by Eugene Marchukevich on 12/16/15.
 //
 
-#include "Graph.hpp"
-#include <vector>
+#include "Graph.h"
 
-using namespace std;
 
 namespace GraphLibrary
 {
@@ -73,4 +67,3 @@ namespace GraphLibrary
         return true;
     }
 }
-

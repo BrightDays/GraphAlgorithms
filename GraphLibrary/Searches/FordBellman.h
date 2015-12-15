@@ -1,21 +1,46 @@
 //
-//  FordBellman.cpp
-//  GraphsAlgorithms
-//
-//  Created by Eugene Marchukevich on 12/7/15.
-//  Copyright © 2015 Eugene Marchukevich. All rights reserved.
+// Created by Eugene Marchukevich on 12/16/15.
 //
 
-#include "FordBellman.hpp"
+#ifndef GRAPHALGORITHMS_FORDBELLMAN_H
+#define GRAPHALGORITHMS_FORDBELLMAN_H
+
+#include <iostream>
+#include <vector>
+#include "../Definitions.h"
+
+using namespace std;
 
 namespace GraphLibrary
 {
+    template <class G>
+    class FordBellman
+    {
+    private:
+        vertex start, finish;
+        vector<long long> distance;
+        vector<vertex> ancestors;
+        G *graph;
 
-    FordBellman :: FordBellman(vertex _start, vertex _finish, const BaseGraph& g)
+    public:
+        FordBellman(vertex, vertex, const G&);
+
+        void search();
+        long long distanceTo(vertex);
+        vector<vertex> wayToVertex(vertex);
+        vector<long long> allDistances();
+        void setGraph(const G&);
+        void setStart(vertex);
+        void setFinish(vertex);
+        void setNewData(int, int, const G&);
+    };
+
+    template <class G>
+    FordBellman<G> :: FordBellman(vertex _start, vertex _finish, const G& g)
     {
         start = _start;
         finish = _finish;
-        graph = (BaseGraph*)&g;
+        graph = (G*)&g;
         ancestors.resize(graph->numberOfVertexes());
         for(int i = 0; i < graph->numberOfVertexes(); i++)
         {
@@ -23,7 +48,8 @@ namespace GraphLibrary
         }
     }
 
-    void FordBellman :: search()
+    template <class G>
+    void FordBellman<G> :: search()
     {
         distance[start] = 0;
         while (true)
@@ -60,57 +86,61 @@ namespace GraphLibrary
         }
     }
 
-
-    long long FordBellman :: distanceTo(vertex v)
+    template <class G>
+    long long FordBellman<G> :: distanceTo(vertex v)
     {
         if (distance[v] == MAX_DISTANCE)
             return -1;
         return distance[v];
     }
-
-    vector<vertex> FordBellman :: wayToVertex(vertex v)
+    template <class G>
+    vector<vertex> FordBellman<G> :: wayToVertex(vertex v)
     {
         vector<vertex> way;
         if (distance[v] == MAX_DISTANCE)
             return way;
-        
+
         for (vertex v = finish; v != -1; v = ancestors[v])
             way.push_back(v);
         reverse(way.begin(), way.end());
         return way;
     }
-
-    vector<long long> FordBellman :: allDistances()
+    template <class G>
+    vector<long long> FordBellman<G> :: allDistances()
     {
         return distance;
     }
 
-
-    void FordBellman :: setNewData(int _start, int _finish, const BaseGraph &g)
+    template <class G>
+    void FordBellman<G> :: setNewData(int _start, int _finish, const G &g)
     {
         start = _start;
         finish = _finish;
-        graph = (BaseGraph*)&g;
+        graph = (G*)&g;
     }
-
-    void FordBellman :: setGraph(const BaseGraph &g)
+    template <class G>
+    void FordBellman<G> :: setGraph(const G &g)
     {
-        graph = (BaseGraph*)&g;
+        graph = (G*)&g;
         distance.resize(graph->numberOfVertexes());
         for(int i = 0; i < graph->numberOfVertexes(); i++)
         {
             distance.push_back(MAX_DISTANCE);
         }
-        
-    }
 
-    void FordBellman :: setStart(vertex s)
+    }
+    template <class G>
+    void FordBellman<G> :: setStart(vertex s)
     {
         start = s;
     }
-
-    void FordBellman :: setFinish(vertex f)
+    template <class G>
+    void FordBellman<G> :: setFinish(vertex f)
     {
         finish = f;
     }
 }
+
+
+
+#endif //GRAPHALGORITHMS_FORDBELLMAN_H

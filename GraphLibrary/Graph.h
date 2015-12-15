@@ -1,46 +1,42 @@
 //
-//  Graph.hpp
-//  GraphsAlgorithms
-//
-//  Created by Eugene Marchukevich on 11/8/15.
-//  Copyright © 2015 Eugene Marchukevich. All rights reserved.
+// Created by Eugene Marchukevich on 12/16/15.
 //
 
-#ifndef Graph_hpp
-#define Graph_hpp
+#ifndef GRAPHALGORITHMS_GRAPH_H
+#define GRAPHALGORITHMS_GRAPH_H
 
-#include <stdio.h>
-#include <vector>
 #include "Definitions.h"
-#include "BaseGraph.h"
+#include <vector>
 
 using namespace std;
 
 namespace GraphLibrary
 {
-    class Graph : public BaseGraph
+    class Graph
     {
     private:
         int n;
         int m;
         vector<vector<Edge>> matrix;
         vector<Edge> edges;
-        
+
     public:
         Graph(int, const vector<Edge>&);
         Graph(int);
         void addEdge(const Edge&);
-        
+
         vector<Edge> :: iterator beginForVertex(vertex);
         vector<Edge> :: iterator endForVertex(vertex);
-        
+
         vector<Edge> :: iterator begin();
         vector<Edge> :: iterator end();
-        
+
         int numberOfVertexes();
         int numberOfEdges();
         bool iteratorBased();
     };
 
 }
-#endif /* Graph_hpp */
+
+
+#endif //GRAPHALGORITHMS_GRAPH_H

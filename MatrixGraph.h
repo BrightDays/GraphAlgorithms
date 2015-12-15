@@ -1,19 +1,21 @@
 //
-//  MatrixGraph.hpp
-//  GraphsAlgorithms
-//
-//  Created by Eugene Marchukevich on 12/15/15.
-//  Copyright © 2015 Eugene Marchukevich. All rights reserved.
+// Created by Eugene Marchukevich on 12/16/15.
 //
 
-#ifndef MatrixGraph_hpp
-#define MatrixGraph_hpp
+#ifndef TEST_MATRIXGRAPH_H
+#define TEST_MATRIXGRAPH_H
 
-#include <stdio.h>
+
+
+#include <iostream>
+#include <cstdio>
+#include <vector>
 #include <set>
-#include "GraphLibrary/Graph.hpp"
+#include "GraphLibrary/Definitions.h"
 
-class MatrixGraph : public GraphLibrary::BaseGraph
+using namespace std;
+
+class MatrixGraph
 {
 private:
     int n,m;
@@ -23,16 +25,15 @@ private:
     bool checkCell(pair<int, int>);
     pair<int, int> cellForVertexNumber(GraphLibrary::vertex);
     GraphLibrary::vertex vertexNumberForCell(pair<int,int>);
-    
+
 public:
-    MatrixGraph(int, int, const vector<pair<int, int>>&);
+    MatrixGraph(int, int, vector<pair<int, int> >&);
     vector<GraphLibrary::Edge> edgesForVertex(GraphLibrary::vertex);
-    
+
     bool iteratorBased();
-    
     int numberOfVertexes();
     int numberOfEdges();
 };
 
 
-#endif /* MatrixGraph_hpp */
+#endif //TEST_MATRIXGRAPH_H

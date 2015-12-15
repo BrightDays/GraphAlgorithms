@@ -1,15 +1,15 @@
 //
-//  MatrixGraph.cpp
-//  GraphsAlgorithms
-//
-//  Created by Eugene Marchukevich on 12/15/15.
-//  Copyright © 2015 Eugene Marchukevich. All rights reserved.
+// Created by Eugene Marchukevich on 12/16/15.
 //
 
-#include "MatrixGraph.hpp"
-#include <stdlib.h>
+#include "MatrixGraph.h"
+#include "GraphLibrary/Definitions.h"
 
-MatrixGraph::MatrixGraph(int _n, int _m, const vector<pair<int, int>>&blocked)
+
+
+using namespace std;
+
+MatrixGraph::MatrixGraph(int _n, int _m, vector<pair<int, int> > &blocked)
 {
     n = _n;
     m = _m;
@@ -49,7 +49,7 @@ vector<GraphLibrary::Edge> MatrixGraph::edgesForVertex(GraphLibrary::vertex v)
     if (checkCell(newCell))
         edges.push_back(GraphLibrary::Edge(v, vertexNumberForCell(newCell)));
     newCell = cell;
-    
+
     return edges;
 }
 
