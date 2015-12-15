@@ -42,7 +42,8 @@ namespace GraphLibrary
         void setNewData(int, int, const G&);
     };
 
-    template<class G> AStar<G> :: AStar (vertex _start, vertex _finish, long long(*_distanceFunction)(vertex, vertex), const G & g)
+    template<class G>
+    AStar<G> :: AStar (vertex _start, vertex _finish, long long(*_distanceFunction)(vertex, vertex), const G & g)
     {
         start = _start;
         finish = _finish;
@@ -50,7 +51,8 @@ namespace GraphLibrary
         distanceFunction = _distanceFunction;
     }
 
-    template<class G> void AStar<G>::search()
+    template<class G>
+    void AStar<G>::search()
     {
 
         CREATE_METHOD_CALLER(vector<Edge>::iterator, beginForVertex, graph);
@@ -100,44 +102,51 @@ namespace GraphLibrary
     }
 
 
-    template<class G> long long AStar<G> :: distanceTo(vertex v)
+    template<class G>
+    long long AStar<G> :: distanceTo(vertex v)
     {
         if (distance.find(v) == distance.end())
             return -1;
         return distance[v];
     }
 
-    template<class G> vector<vertex> AStar<G> :: wayToVertex(vertex v)
+    template<class G>
+    vector<vertex> AStar<G> :: wayToVertex(vertex v)
     {
         vector<vertex> way;
         return way;
     }
 
-    template<class G> vector<long long> AStar<G> :: allDistances()
+    template<class G>
+    vector<long long> AStar<G> :: allDistances()
     {
         vector<long long> distance;
         return distance;
     }
 
 
-    template<class G> void AStar<G> :: setNewData(int _start, int _finish, const G &g)
+    template<class G>
+    void AStar<G> :: setNewData(int _start, int _finish, const G &g)
     {
         start = _start;
         finish = _finish;
         graph = (G*)&g;
     }
 
-    template<class G> void AStar<G> :: setGraph(const G &g)
+    template<class G>
+    void AStar<G> :: setGraph(const G &g)
     {
         graph = (G*)&g;
     }
 
-    template<class G> void AStar<G> :: setStart(vertex s)
+    template<class G>
+    void AStar<G> :: setStart(vertex s)
     {
         start = s;
     }
 
-    template<class G> void AStar<G> :: setFinish(vertex f)
+    template<class G>
+    void AStar<G> :: setFinish(vertex f)
     {
         finish = f;
     }
