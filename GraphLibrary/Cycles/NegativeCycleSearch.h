@@ -73,6 +73,7 @@ namespace GraphLibrary {
                 }
             }
         }
+        
         if (anyChanges == -1) {
             cycleExist = false;
             return;

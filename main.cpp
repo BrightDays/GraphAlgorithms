@@ -72,6 +72,7 @@ int main()
     g1.addEdge(Edge(5, 3));
     g1.addEdge(Edge(2, 3));
 
+
     OrientedGraph g2(6);
     g2.addEdge(Edge(1, 0));
     g2.addEdge(Edge(2, 1));
