@@ -49,4 +49,10 @@ int main()
         cout << b[i].start << " " << b[i].finish << endl;
     }
 
+    GraphLibrary::BiconnectedComponentSearch<GraphLibrary::Graph> biconnectedComponentSearch(graph);
+    biconnectedComponentSearch.search();
+    vector<GraphLibrary::vertex > a = biconnectedComponentSearch.getBiconnectedComponents();
+    for(int i = 0; i < a.size(); i ++) {
+        cout << a[i] << endl;
+    }
 }

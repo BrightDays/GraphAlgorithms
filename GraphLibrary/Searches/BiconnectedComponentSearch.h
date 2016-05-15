@@ -2,8 +2,9 @@
 // Created by Eugene Marchukevich on 5/15/16.
 //
 
-#ifndef GRAPHALGORITHMS_BRIDGESEARCH_H
-#define GRAPHALGORITHMS_BRIDGESEARCH_H
+#ifndef GRAPHALGORITHMS_BICONNECTEDCOMPONENTSEARCH_H
+#define GRAPHALGORITHMS_BICONNECTEDCOMPONENTSEARCH_H
+
 
 #include <stdio.h>
 #include <vector>
@@ -15,7 +16,7 @@ using namespace std;
 namespace GraphLibrary
 {
     template <class G>
-    class BridgeSearch
+    class BiconnectedComponentSearch
     {
         CREATE_CHECK_METHOD_PARAMS(beginForVertex, G);
         CREATE_CHECK_METHOD_PARAMS(endForVertex, G);
@@ -27,19 +28,19 @@ namespace GraphLibrary
         vector<int> timeIn;
         vector<int> fup;
         G *graph;
-        vector<Edge> bridges;
+        vector<vertex> biconnectedComponents;
         void dfs (vertex, vertex);
 
     public:
-        BridgeSearch(const G&);
+        BiconnectedComponentSearch(const G&);
         void search();
-        vector<Edge> getBridges();
+        vector<vertex> getBiconnectedComponents();
         void setGraph(const G&);
         void setNewData(const G&);
     };
 
     template <class G>
-    BridgeSearch<G> :: BridgeSearch(const G &g)
+    BiconnectedComponentSearch<G> :: BiconnectedComponentSearch(const G &g)
     {
         graph = (G*)&g;
         int n = graph->numberOfVertexes();
@@ -53,7 +54,7 @@ namespace GraphLibrary
 
 
     template <class G>
-    void BridgeSearch<G> :: dfs (vertex v, vertex p)
+    void BiconnectedComponentSearch<G> :: dfs (vertex v, vertex p)
     {
         CREATE_METHOD_CALLER(vector<Edge>::iterator, beginForVertex, graph);
         CREATE_METHOD_CALLER(vector<Edge>::iterator, endForVertex, graph);
@@ -72,6 +73,7 @@ namespace GraphLibrary
             itBegin = currentEdges.begin();
             itEnd = currentEdges.end();
         }
+        int children = 0;
         for(vector<Edge> :: iterator it = itBegin; it != itEnd; it++)  {
             Edge edge = *it;
             int to = edge.finish;
@@ -82,39 +84,39 @@ namespace GraphLibrary
                 fup[v] = min(fup[v], timeIn[to]);
             } else {
                 dfs (to, v);
-                fup[v] = min(fup[v], fup[to]);
-                if (fup[to] > timeIn[v]) {
-                    bridges.push_back(Edge(v, to));
+                fup[v] = min (fup[v], fup[to]);
+                if (fup[to] >= timeIn[v] && p != -1) {
+                    biconnectedComponents.push_back(v);
                 }
+                ++children;
             }
+        }
+        if (p == -1 && children > 1) {
+            biconnectedComponents.push_back(v);
         }
     }
 
     template <class G>
-    void BridgeSearch<G> :: search()
+    void BiconnectedComponentSearch<G> :: search()
     {
-        for (int i = 0; i < graph->numberOfVertexes(); i++) {
-            if (!used[i]) {
-                dfs(i, -1);
-            }
-        }
+        dfs(0, -1);
     }
 
 
     template <class G>
-    vector<Edge> BridgeSearch<G> :: getBridges()
+    vector<vertex> BiconnectedComponentSearch<G> ::getBiconnectedComponents()
     {
-        return bridges;
+        return biconnectedComponents;
     }
 
     template <class G>
-    void BridgeSearch<G> :: setNewData(const G &g)
+    void BiconnectedComponentSearch<G> :: setNewData(const G &g)
     {
         graph = (G*)&g;
     }
 
     template <class G>
-    void BridgeSearch<G> :: setGraph(const G &g)
+    void BiconnectedComponentSearch<G> :: setGraph(const G &g)
     {
         graph = (G*)&g;
         int n = graph->numberOfVertexes();
@@ -130,4 +132,4 @@ namespace GraphLibrary
     }
 }
 
-#endif //GRAPHALGORITHMS_BRIDGESEARCH_H
+#endif //GRAPHALGORITHMS_BICONNECTEDCOMPONENTSEARCH_H

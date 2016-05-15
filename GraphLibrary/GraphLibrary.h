@@ -12,6 +12,8 @@
 #include "Searches/FordBellman.h"
 #include "Searches/WidthFastSearch.h"
 #include "Searches/BridgeSearch.h"
+#include "Searches/BiconnectedComponentSearch.h"
+
 
 
 #endif //GRAPHALGORITHMS_GRAPHLIBRARY_H
