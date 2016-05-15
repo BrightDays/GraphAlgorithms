@@ -2,24 +2,24 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/BiconnectedComponentSearch.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/TopologicalSort.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/BridgeSearch.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/MinSpanTree.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/StrongConnectedComponentsSearch.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphLibrary.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/MatrixGraph.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/MatrixGraph.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/OrientedGraph.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/Graph.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/Graph.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/OrientedGraph.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Definitions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphLibrary.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/Dijkstra.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/FordBellman.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/AStar.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/WidthFastSearch.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Cycles/NegativeCycleSearch.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Definitions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/BiconnectedComponentSearch.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/TopologicalSort.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/StrongConnectedComponentsSearch.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/BridgeSearch.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/MinSpanTree.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/NegativeCycleSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>

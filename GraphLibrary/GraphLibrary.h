@@ -21,6 +21,6 @@
 #include "SimpleAlgorithms/TopologicalSort.h"
 #include "SimpleAlgorithms/MinSpanTree.h"
 
-#include "Cycles/NegativeCycleSearch.h"
+#include "SimpleAlgorithms/NegativeCycleSearch.h"
 
 #endif //GRAPHALGORITHMS_GRAPHLIBRARY_H

@@ -24,7 +24,7 @@ set(SOURCE_FILES
         GraphLibrary/Searches/WidthFastSearch.h
         GraphLibrary/Searches/Dijkstra.h
 
-        GraphLibrary/Cycles/NegativeCycleSearch.h
+        GraphLibrary/SimpleAlgorithms/NegativeCycleSearch.h
 
         GraphLibrary/GraphLibrary.h
         GraphLibrary/Definitions.h)
