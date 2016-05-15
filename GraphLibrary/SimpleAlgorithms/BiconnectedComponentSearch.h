@@ -1,5 +1,5 @@
 //
-// Created by Eugene Marchukevich on 5/15/16.
+// Created by Eugene Marchukevich on 3/18/16.
 //
 
 #ifndef GRAPHALGORITHMS_BICONNECTEDCOMPONENTSEARCH_H

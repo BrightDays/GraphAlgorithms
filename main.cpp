@@ -120,4 +120,26 @@ int main()
     for(int i = 0; i < minSpanTreeEdges.size(); i ++) {
         cout << minSpanTreeEdges[i].start << " " << minSpanTreeEdges[i].finish << endl;
     }
+
+    Graph negativeCycleGraph(5);
+    negativeCycleGraph.addEdge(Edge(0, 1, -1));
+    negativeCycleGraph.addEdge(Edge(1, 2, 2));
+    negativeCycleGraph.addEdge(Edge(2, 3, -4));
+    negativeCycleGraph.addEdge(Edge(3, 0, 1));
+    negativeCycleGraph.addEdge(Edge(4, 0, 1));
+
+    NegativeCycleSearch<Graph> negativeCycleSearch(negativeCycleGraph);
+    negativeCycleSearch.search();
+    cout << "Negative Cycle Search:" << endl;
+    if (negativeCycleSearch.isCycleExist()) {
+        cout << "Cycle exist" << endl;
+        vector<vertex> cycle = negativeCycleSearch.getCycleVertexes();
+        for(int i = 0; i < cycle.size(); i ++) {
+            cout << cycle[i] << " ";
+        }
+    } else {
+        cout << "There is no cycle." << endl;
+    }
+
+
 }

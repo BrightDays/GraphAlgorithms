@@ -1,5 +1,5 @@
 //
-// Created by Eugene Marchukevich on 5/15/16.
+// Created by Eugene Marchukevich on 3/5/16.
 //
 
 #ifndef GRAPHALGORITHMS_MINSPANTREE_H

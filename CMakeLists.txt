@@ -24,6 +24,8 @@ set(SOURCE_FILES
         GraphLibrary/Searches/WidthFastSearch.h
         GraphLibrary/Searches/Dijkstra.h
 
+        GraphLibrary/Cycles/NegativeCycleSearch.h
+
         GraphLibrary/GraphLibrary.h
         GraphLibrary/Definitions.h)
 add_executable(GraphAlgorithms ${SOURCE_FILES})
