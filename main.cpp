@@ -24,14 +24,17 @@ int main()
     MatrixGraph g(5, 7, blocked);
     AStar<MatrixGraph> aStar(0, 34, distanceFunction, g);
     aStar.search();
+    cout << "AStar:" << endl;
     cout << aStar.distanceTo(5*7-1) << endl;
 
     WidthFastSearch<MatrixGraph> wfs(0, 34, g);
     wfs.search();
+    cout << "WFS:" << endl;
     cout << wfs.distanceTo(5*7-1) << endl;
 
     Dijkstra<MatrixGraph> d(0, 34, g);
     d.search();
+    cout << "Dijkstra:" << endl;
     cout << d.distanceTo(5*7-1) << endl;
 
     Graph graph(6);
@@ -46,6 +49,7 @@ int main()
     BridgeSearch<Graph> bridgeSearch(graph);
     bridgeSearch.search();
     vector<Edge> b = bridgeSearch.getBridges();
+    cout << "Bridges:" << endl;
     for(int i = 0; i < b.size(); i ++) {
         cout << b[i].start << " " << b[i].finish << endl;
     }
@@ -53,6 +57,7 @@ int main()
     BiconnectedComponentSearch<Graph> biconnectedComponentSearch(graph);
     biconnectedComponentSearch.search();
     vector<vertex > a = biconnectedComponentSearch.getBiconnectedComponents();
+    cout << "Biconnected Components:" << endl;
     for(int i = 0; i < a.size(); i ++) {
         cout << a[i] << endl;
     }
@@ -79,12 +84,32 @@ int main()
     StrongConnectedComponentsSearch<OrientedGraph> strongConnectedComponentsSearch(g1, g2);
     strongConnectedComponentsSearch.search();
     vector<vector<vertex>> comp = strongConnectedComponentsSearch.getComponents();
+    cout << "Strong Connected Components:" << endl;
     for(int j = 0; j < comp.size(); j ++) {
         vector<vertex> component = comp[j];
         for(int i = 0; i < component.size(); i ++) {
             cout << component[i] << " ";
         }
         cout << endl;
+    }
+
+    OrientedGraph gForSort(8);
+    gForSort.addEdge(Edge(1, 4));
+    gForSort.addEdge(Edge(1, 6));
+    gForSort.addEdge(Edge(2, 7));
+    gForSort.addEdge(Edge(3, 7));
+    gForSort.addEdge(Edge(3, 4));
+    gForSort.addEdge(Edge(4, 5));
+    gForSort.addEdge(Edge(7, 0));
+    gForSort.addEdge(Edge(7, 5));
+    gForSort.addEdge(Edge(7, 6));
+
+    TopologicalSort<OrientedGraph> topologicalSort(gForSort);
+    topologicalSort.sort();
+    vector<vertex > sortedVertexes = topologicalSort.getSortedVertexes();
+    cout << "Topological Sort:" << endl;
+    for(int i = 0; i < sortedVertexes.size(); i ++) {
+        cout << sortedVertexes[i] << " ";
     }
 
 }
