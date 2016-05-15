@@ -15,8 +15,9 @@
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/AStar.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/WidthFastSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/BiconnectedComponentSearch.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/BridgeSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/TopologicalSort.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/BridgeSearch.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/MinSpanTree.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/StrongConnectedComponentsSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />

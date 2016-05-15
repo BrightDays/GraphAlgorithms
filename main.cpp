@@ -106,10 +106,18 @@ int main()
 
     TopologicalSort<OrientedGraph> topologicalSort(gForSort);
     topologicalSort.sort();
-    vector<vertex > sortedVertexes = topologicalSort.getSortedVertexes();
+    vector<vertex> sortedVertexes = topologicalSort.getSortedVertexes();
     cout << "Topological Sort:" << endl;
     for(int i = 0; i < sortedVertexes.size(); i ++) {
         cout << sortedVertexes[i] << " ";
     }
+    cout << endl;
 
+    MinSpanTree<Graph> minSpanTree(graph);
+    minSpanTree.build();
+    vector<Edge> minSpanTreeEdges = minSpanTree.getSpanTreeEdges();
+    cout << "Span tree:" << endl;
+    for(int i = 0; i < minSpanTreeEdges.size(); i ++) {
+        cout << minSpanTreeEdges[i].start << " " << minSpanTreeEdges[i].finish << endl;
+    }
 }

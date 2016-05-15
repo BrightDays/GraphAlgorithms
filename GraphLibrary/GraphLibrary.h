@@ -17,6 +17,6 @@
 #include "SimpleAlgorithms/BiconnectedComponentSearch.h"
 #include "SimpleAlgorithms/StrongConnectedComponentsSearch.h"
 #include "SimpleAlgorithms/TopologicalSort.h"
-
+#include "SimpleAlgorithms/MinSpanTree.h"
 
 #endif //GRAPHALGORITHMS_GRAPHLIBRARY_H

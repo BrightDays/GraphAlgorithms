@@ -17,6 +17,7 @@ set(SOURCE_FILES
         GraphLibrary/SimpleAlgorithms/BiconnectedComponentSearch.h
         GraphLibrary/SimpleAlgorithms/BridgeSearch.h
         GraphLibrary/SimpleAlgorithms/TopologicalSort.h
+        GraphLibrary/SimpleAlgorithms/MinSpanTree.h
 
         GraphLibrary/Searches/AStar.h
         GraphLibrary/Searches/FordBellman.h
