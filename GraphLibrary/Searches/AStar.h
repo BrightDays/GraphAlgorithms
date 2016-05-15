@@ -62,37 +62,31 @@ namespace GraphLibrary
         set < pair<long long, int> > q;
         q.insert (make_pair(distanceFunction(start, finish), start));
         distance[start] = 0;
-        while (!q.empty())
-        {
+        while (!q.empty())  {
             int v = q.begin()->second;
             long long d = distance[v];
-            if (v == finish)
-            {
+            if (v == finish)  {
                 return;
             }
             q.erase (q.begin());
             vector<Edge> :: iterator itBegin;
             vector<Edge> :: iterator itEnd;
             vector<Edge> currentEdges;
-            if (graph->iteratorBased())
-            {
+            if (graph->iteratorBased()) {
                 itBegin = callMethod_beginForVertex(v);
                 itEnd = callMethod_endForVertex(v);
-            } else
-            {
+            } else {
                 currentEdges = callMethod_edgesForVertex(v);
                 itBegin = currentEdges.begin();
                 itEnd = currentEdges.end();
             }
 
-            for(vector<Edge> :: iterator it = itBegin; it!=itEnd; it++)
-            {
+            for(vector<Edge> :: iterator it = itBegin; it!=itEnd; it++) {
                 Edge edge = *it;
                 int to = edge.finish;
                 long long length = edge.weight;
                 auto iter = std::find_if(q.begin(), q.end(), [&to](const pair<int, int>& p) { return p.second == to;});
-                if (distance.find(to) == distance.end() || d + length < distance[to])
-                {
+                if (distance.find(to) == distance.end() || d + length < distance[to]) {
                     q.erase(*iter);
                     distance[to] = d + length;
                     q.insert(make_pair(d + length + distanceFunction(v, to), to));
@@ -105,8 +99,9 @@ namespace GraphLibrary
     template<class G>
     long long AStar<G> :: distanceTo(vertex v)
     {
-        if (distance.find(v) == distance.end())
+        if (distance.find(v) == distance.end()) {
             return -1;
+        }
         return distance[v];
     }
 

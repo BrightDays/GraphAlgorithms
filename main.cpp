@@ -33,4 +33,20 @@ int main()
     d.search();
     cout << d.distanceTo(5*7-1) << endl;
 
+    GraphLibrary::Graph graph(6);
+    graph.addEdge(GraphLibrary:: Edge(0, 1));
+    graph.addEdge(GraphLibrary:: Edge(1, 2));
+    graph.addEdge(GraphLibrary:: Edge(2, 0));
+    graph.addEdge(GraphLibrary:: Edge(3, 4));
+    graph.addEdge(GraphLibrary:: Edge(4, 5));
+    graph.addEdge(GraphLibrary:: Edge(5, 3));
+    graph.addEdge(GraphLibrary:: Edge(2, 3));
+
+    GraphLibrary::BridgeSearch<GraphLibrary::Graph> bridgeSearch(graph);
+    bridgeSearch.search();
+    vector<GraphLibrary::Edge> b = bridgeSearch.getBridges();
+    for(int i = 0; i < b.size(); i ++) {
+        cout << b[i].start << " " << b[i].finish << endl;
+    }
+
 }

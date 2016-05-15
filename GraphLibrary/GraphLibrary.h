@@ -11,5 +11,7 @@
 #include "Searches/Dijkstra.h"
 #include "Searches/FordBellman.h"
 #include "Searches/WidthFastSearch.h"
+#include "Searches/BridgeSearch.h"
+
 
 #endif //GRAPHALGORITHMS_GRAPHLIBRARY_H

@@ -31,6 +31,13 @@ namespace GraphLibrary
             weight = 1;
         }
 
+        Edge()
+        {
+            start = 0;
+            finish = 0;
+            weight = 0;
+        }
+
     };
 
 

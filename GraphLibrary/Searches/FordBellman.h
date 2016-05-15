@@ -46,8 +46,7 @@ namespace GraphLibrary
         finish = _finish;
         graph = (G*)&g;
         ancestors.resize(graph->numberOfVertexes());
-        for(int i = 0; i < graph->numberOfVertexes(); i++)
-        {
+        for(int i = 0; i < graph->numberOfVertexes(); i++) {
             distance.push_back(MAX_DISTANCE);
         }
     }
@@ -60,56 +59,54 @@ namespace GraphLibrary
         CREATE_METHOD_CALLER(vector<Edge>, allEdges, graph);
 
         distance[start] = 0;
-        while (true)
-        {
+        while (true) {
             bool anyChanges = false;
             vector<Edge> :: iterator itBegin;
             vector<Edge> :: iterator itEnd;
             vector<Edge> currentEdges;
-            if (graph->iteratorBased())
-            {
+            if (graph->iteratorBased()) {
                 itBegin = callMethod_begin();
                 itEnd = callMethod_end();
-            } else
-            {
+            } else {
                 currentEdges = callMethod_allEdges();
                 itBegin = currentEdges.begin();
                 itEnd = currentEdges.end();
             }
-            for (vector<Edge> :: iterator it = itBegin; it != itEnd;it++)
-            {
+            for (vector<Edge> :: iterator it = itBegin; it != itEnd;it++) {
                 Edge edge = *it;
-                if (distance[edge.start] < MAX_DISTANCE)
-                {
-                    if (distance[edge.finish] > distance[edge.start] + edge.weight)
-                    {
+                if (distance[edge.start] < MAX_DISTANCE) {
+                    if (distance[edge.finish] > distance[edge.start] + edge.weight) {
                         distance[edge.finish] = distance[edge.start] + edge.weight;
                         ancestors[edge.finish] = edge.start;
                         anyChanges = true;
                     }
                 }
             }
-            if (!anyChanges)
+            if (!anyChanges) {
                 break;
+            }
         }
     }
 
     template <class G>
     long long FordBellman<G> :: distanceTo(vertex v)
     {
-        if (distance[v] == MAX_DISTANCE)
+        if (distance[v] == MAX_DISTANCE) {
             return -1;
+        }
         return distance[v];
     }
     template <class G>
     vector<vertex> FordBellman<G> :: wayToVertex(vertex v)
     {
         vector<vertex> way;
-        if (distance[v] == MAX_DISTANCE)
+        if (distance[v] == MAX_DISTANCE) {
             return way;
+        }
 
-        for (vertex v = finish; v != -1; v = ancestors[v])
+        for (vertex v = finish; v != -1; v = ancestors[v]) {
             way.push_back(v);
+        }
         reverse(way.begin(), way.end());
         return way;
     }
@@ -131,8 +128,7 @@ namespace GraphLibrary
     {
         graph = (G*)&g;
         distance.resize(graph->numberOfVertexes());
-        for(int i = 0; i < graph->numberOfVertexes(); i++)
-        {
+        for(int i = 0; i < graph->numberOfVertexes(); i++) {
             distance.push_back(MAX_DISTANCE);
         }
 
