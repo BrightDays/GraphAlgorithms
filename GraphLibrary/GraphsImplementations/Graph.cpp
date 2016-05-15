@@ -25,6 +25,7 @@ namespace GraphLibrary
         {
             Edge edge = _edges[i];
             matrix[edge.start].push_back(edge);
+            matrix[edge.finish].push_back(Edge(edge.finish, edge.start, edge.weight));
         }
     }
 
@@ -52,6 +53,7 @@ namespace GraphLibrary
     {
         edges.push_back(edge);
         matrix[edge.start].push_back(edge);
+        matrix[edge.finish].push_back(Edge(edge.finish, edge.start, edge.weight));
     }
 
     int Graph :: numberOfVertexes()

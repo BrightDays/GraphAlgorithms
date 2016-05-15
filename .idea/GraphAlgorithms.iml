@@ -2,20 +2,22 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/MatrixGraph.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/MatrixGraph.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/MatrixGraph.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/OrientedGraph.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/Graph.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/Graph.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/OrientedGraph.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Definitions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphLibrary.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Graph.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/AStar.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/BiconnectedComponentSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/BridgeSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/Dijkstra.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/FordBellman.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/WidthFastSearch.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Graph.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MatrixGraph.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

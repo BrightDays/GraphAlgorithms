@@ -5,7 +5,7 @@
 #ifndef GRAPHALGORITHMS_GRAPH_H
 #define GRAPHALGORITHMS_GRAPH_H
 
-#include "Definitions.h"
+#include "../Definitions.h"
 #include <vector>
 
 using namespace std;
