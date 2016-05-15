@@ -7,8 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphLibrary.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Graph.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/AStar.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/FordBellman.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/BiconnectedComponentSearch.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/BridgeSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/Dijkstra.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/FordBellman.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/WidthFastSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Graph.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
