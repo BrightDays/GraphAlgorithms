@@ -142,5 +142,18 @@ int main()
         cout << "There is no cycle." << endl;
     }
 
-
+    Graph lca(7);
+    lca.addEdge(Edge(0, 1));
+    lca.addEdge(Edge(1, 2));
+    lca.addEdge(Edge(0, 3));
+    lca.addEdge(Edge(3, 4));
+    lca.addEdge(Edge(3, 5));
+    lca.addEdge(Edge(5, 6));
+    LCA<Graph> lcaAlgo(lca);
+    lcaAlgo.search();
+    cout << endl;
+    cout << "LCA:" << endl;
+    cout << lcaAlgo.findLca(6, 1) << endl;
+    cout << lcaAlgo.findLca(4, 6) << endl;
+    cout << lcaAlgo.findLca(5, 6) << endl;
 }

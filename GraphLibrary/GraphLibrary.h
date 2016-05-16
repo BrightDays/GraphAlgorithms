@@ -14,13 +14,14 @@
 #include "Searches/Dijkstra.h"
 #include "Searches/FordBellman.h"
 #include "Searches/WidthFastSearch.h"
+#include "Searches/LCA.h"
+
 
 #include "SimpleAlgorithms/BridgeSearch.h"
 #include "SimpleAlgorithms/BiconnectedComponentSearch.h"
 #include "SimpleAlgorithms/StrongConnectedComponentsSearch.h"
 #include "SimpleAlgorithms/TopologicalSort.h"
 #include "SimpleAlgorithms/MinSpanTree.h"
-
 #include "SimpleAlgorithms/NegativeCycleSearch.h"
 
 #endif //GRAPHALGORITHMS_GRAPHLIBRARY_H

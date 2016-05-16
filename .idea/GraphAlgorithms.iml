@@ -10,9 +10,10 @@
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphsImplementations/OrientedGraph.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Definitions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/GraphLibrary.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/Dijkstra.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/LCA.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/FordBellman.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/AStar.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/Dijkstra.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/Searches/WidthFastSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/BiconnectedComponentSearch.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphLibrary/SimpleAlgorithms/TopologicalSort.h" isTestSource="false" />

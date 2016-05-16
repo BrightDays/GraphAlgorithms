@@ -18,13 +18,14 @@ set(SOURCE_FILES
         GraphLibrary/SimpleAlgorithms/BridgeSearch.h
         GraphLibrary/SimpleAlgorithms/TopologicalSort.h
         GraphLibrary/SimpleAlgorithms/MinSpanTree.h
+        GraphLibrary/SimpleAlgorithms/NegativeCycleSearch.h
 
         GraphLibrary/Searches/AStar.h
         GraphLibrary/Searches/FordBellman.h
         GraphLibrary/Searches/WidthFastSearch.h
         GraphLibrary/Searches/Dijkstra.h
+        GraphLibrary/Searches/LCA.h
 
-        GraphLibrary/SimpleAlgorithms/NegativeCycleSearch.h
 
         GraphLibrary/GraphLibrary.h
         GraphLibrary/Definitions.h)
