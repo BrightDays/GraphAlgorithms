@@ -6,9 +6,11 @@
 #define GRAPHALGORITHMS_GRAPHLIBRARY_H
 
 #include "Definitions.h"
+
 #include "GraphsImplementations/Graph.h"
 #include "GraphsImplementations/MatrixGraph.h"
 #include "GraphsImplementations/OrientedGraph.h"
+#include "GraphsImplementations/RelationTableGraph.h"
 
 #include "Searches/AStar.h"
 #include "Searches/Dijkstra.h"
@@ -16,6 +18,7 @@
 #include "Searches/WidthFastSearch.h"
 #include "Searches/LCA.h"
 
+#include "Flow/KuhnAlgorithm.h"
 
 #include "SimpleAlgorithms/BridgeSearch.h"
 #include "SimpleAlgorithms/BiconnectedComponentSearch.h"

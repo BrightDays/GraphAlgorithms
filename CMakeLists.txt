@@ -12,6 +12,8 @@ set(SOURCE_FILES
         GraphLibrary/GraphsImplementations/Graph.h
         GraphLibrary/GraphsImplementations/OrientedGraph.cpp
         GraphLibrary/GraphsImplementations/OrientedGraph.h
+        GraphLibrary/GraphsImplementations/RelationTableGraph.cpp
+        GraphLibrary/GraphsImplementations/RelationTableGraph.h
 
         GraphLibrary/SimpleAlgorithms/StrongConnectedComponentsSearch.h
         GraphLibrary/SimpleAlgorithms/BiconnectedComponentSearch.h
@@ -26,6 +28,8 @@ set(SOURCE_FILES
         GraphLibrary/Searches/Dijkstra.h
         GraphLibrary/Searches/LCA.h
 
+        GraphLibrary/Flow/KuhnAlgorithm.h
+        GraphLibrary/Flow/DinicFlowAlgorithm.h
 
         GraphLibrary/GraphLibrary.h
         GraphLibrary/Definitions.h)

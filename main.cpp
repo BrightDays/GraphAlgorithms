@@ -11,6 +11,11 @@ long long distanceFunction(GraphLibrary::vertex a, GraphLibrary::vertex b)
     return abs(a - b);
 }
 
+class A : public VertexData{
+public:
+    int a;
+};
+
 int main()
 {
     vector<pair<int, int> > blocked;
@@ -156,4 +161,21 @@ int main()
     cout << lcaAlgo.findLca(6, 1) << endl;
     cout << lcaAlgo.findLca(4, 6) << endl;
     cout << lcaAlgo.findLca(5, 6) << endl;
+
+
+    RelationTableGraph lcaRel(7, false);
+    A aaa;
+    lcaRel.addLine(0, 1);
+    lcaRel.addLine(1, 2, aaa);
+    lcaRel.addLine(0, 3, aaa);
+    lcaRel.addLine(3, 4, aaa);
+    lcaRel.addLine(3, 5, aaa);
+    lcaRel.addLine(5, 6);
+    LCA<RelationTableGraph> lcaRelation(lcaRel);
+    lcaRelation.search();
+    cout << endl;
+    cout << "LCA Relation:" << endl;
+    cout << lcaRelation.findLca(6, 1) << endl;
+    cout << lcaRelation.findLca(4, 6) << endl;
+    cout << lcaRelation.findLca(5, 6) << endl;
 }
