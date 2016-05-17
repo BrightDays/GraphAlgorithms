@@ -43,6 +43,11 @@ namespace GraphLibrary
         }
     }
 
+    VertexData RelationTableGraph :: dataForVertex(vertex v)
+    {
+        return data[v];
+    }
+
     vector<Edge> :: iterator RelationTableGraph :: beginForVertex(vertex v)
     {
         return matrix[v].begin();

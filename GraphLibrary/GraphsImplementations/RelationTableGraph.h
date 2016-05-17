@@ -41,6 +41,8 @@ namespace GraphLibrary
         vector<Edge> :: iterator begin();
         vector<Edge> :: iterator end();
 
+        VertexData dataForVertex(vertex);
+
         int numberOfVertexes();
         int numberOfEdges();
         bool iteratorBased();
