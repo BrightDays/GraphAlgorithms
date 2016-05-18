@@ -12,13 +12,16 @@
 #include "GraphsImplementations/OrientedGraph.h"
 #include "GraphsImplementations/RelationTableGraph.h"
 
+#include "Readers/RelationTableReader.h"
+#include "Readers/MatrixReader.h"
+#include "Readers/SimpleMatrixReader.h"
+#include "Readers/GraphReader.h"
+
 #include "Searches/AStar.h"
 #include "Searches/Dijkstra.h"
 #include "Searches/FordBellman.h"
 #include "Searches/WidthFastSearch.h"
 #include "Searches/LCA.h"
-
-#include "Flow/KuhnAlgorithm.h"
 
 #include "SimpleAlgorithms/BridgeSearch.h"
 #include "SimpleAlgorithms/BiconnectedComponentSearch.h"

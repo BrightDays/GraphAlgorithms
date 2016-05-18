@@ -30,7 +30,7 @@ namespace GraphLibrary
         map<int, long long> distance;
 
     public:
-        AStar(vertex, vertex, long long(*)(vertex, vertex),const G& g);
+        AStar(vertex, vertex, long long(*)(vertex, vertex),const G&);
 
         void search();
         long long distanceTo(vertex);

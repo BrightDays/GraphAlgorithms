@@ -12,8 +12,17 @@ set(SOURCE_FILES
         GraphLibrary/GraphsImplementations/Graph.h
         GraphLibrary/GraphsImplementations/OrientedGraph.cpp
         GraphLibrary/GraphsImplementations/OrientedGraph.h
-        GraphLibrary/GraphsImplementations/RelationTableGraph.cpp
         GraphLibrary/GraphsImplementations/RelationTableGraph.h
+
+        GraphLibrary/Readers/RelationTableReader.cpp
+        GraphLibrary/Readers/RelationTableReader.h
+        GraphLibrary/Readers/GraphReader.cpp
+        GraphLibrary/Readers/GraphReader.h
+        GraphLibrary/Readers/MatrixReader.cpp
+        GraphLibrary/Readers/MatrixReader.h
+        GraphLibrary/Readers/SimpleMatrixReader.cpp
+        GraphLibrary/Readers/SimpleMatrixReader.h
+
 
         GraphLibrary/SimpleAlgorithms/StrongConnectedComponentsSearch.h
         GraphLibrary/SimpleAlgorithms/BiconnectedComponentSearch.h
