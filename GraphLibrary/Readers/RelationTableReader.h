@@ -23,7 +23,7 @@ namespace GraphLibrary {
         vertex ancestor;
         VertexData data;
         std :: ifstream fin;
-        ~RelationTableReader();
+
 
     public:
         RelationTableReader(std :: string);
@@ -33,6 +33,7 @@ namespace GraphLibrary {
         vertex currentVertex();
         vertex ancestorVertex();
         VertexData currentVertexData();
+        ~RelationTableReader();
     };
 }
 

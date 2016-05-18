@@ -40,7 +40,7 @@ namespace GraphLibrary {
         it++;
         return cell;
     }
-    MatrixReader :: ~MatrixReader()
+    SimpleMatrixReader :: ~SimpleMatrixReader()
     {
         fin.close();
     }

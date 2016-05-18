@@ -21,7 +21,7 @@ namespace GraphLibrary {
         std::set<std::pair<int, int>> blockedCells;
         std::set<std::pair<int, int>> :: iterator it;
         std :: ifstream fin;
-        ~MatrixReader();
+
 
     public:
         SimpleMatrixReader(std :: string);
@@ -29,6 +29,7 @@ namespace GraphLibrary {
         int getM();
         std :: pair<int, int> getNextBlockedCell();
         bool isNextCellExists();
+        ~SimpleMatrixReader();
     };
 }
 

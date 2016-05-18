@@ -18,13 +18,14 @@ namespace GraphLibrary {
         int n;
         int m;
         std :: ifstream fin;
-        ~GraphReader();
 
     public:
         GraphReader(std::string);
         int numberOfVertexes();
         int numberOfEdges();
         Edge getNextEdge();
+        ~GraphReader();
+
     };
 }
 
